@@ -2,12 +2,13 @@
 
 VEQDB is the release and reproducibility repository for a compact database of
 fixed-boundary tokamak equilibria represented with MXH--Chebyshev geometry and
-physical-profile roots. It accompanies the manuscript *VEQDB: a compact
-reconstructible database of tokamak equilibria*.
+physical-profile roots. It accompanies the manuscript *VEQDB: A Compact and 
+Reconstructible Multi-Device Tokamak Equilibrium Database, 
+https://arxiv.org/abs/2609.23296*.
 
 The initial release contains 13,291 accepted equilibria from 267 conventional
 and spherical tokamak devices. The distributed compact-JSON archives occupy
-18.95 MB; the same JSON records occupy 41.24 MB before archive compression.
+18 MB; the same JSON records occupy 41 MB before archive compression.
 
 ## Contents
 
@@ -19,7 +20,6 @@ and spherical tokamak devices. The distributed compact-JSON archives occupy
 | `data/figure-data/` | Frozen numerical inputs used to render the manuscript figures. |
 | `data/figure-inputs/` | Frozen TCV and START compact records used by the manuscript figures. |
 | `scripts/` | Manuscript figure source, style definitions and the G-EQDSK projection snapshot. |
-| `paper/` | LaTeX manuscript source, bibliography and final figure files. |
 
 `data/release/` is the authoritative public record set. The other directories
 provide provenance and reproducibility inputs; they are not a second release
