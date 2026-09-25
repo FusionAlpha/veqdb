@@ -55,6 +55,17 @@ revision this release was produced with,
 reconstruct a distributed record. The pinned revision does provide G-EQDSK
 reading and writing.
 
+The compact-record interface is published at
+<https://hub.veloalpha.cn/gitea/suyuexinghen/veqpy-pkg>, revision
+`586afb717099fcc1eb17ac5ffca4a10a95ae6d80`:
+
+```sh
+git clone https://hub.veloalpha.cn/gitea/suyuexinghen/veqpy-pkg.git
+```
+
+That revision decodes all 13,291 records in this release; the decoder entry
+point is `veqpy.fitting.compact`.
+
 The G-EQDSK projection implementation is retained in
 `scripts/gfile_projection/` as source provenance so that its acceptance logic
 remains auditable. It is not presented as a second public solver.
