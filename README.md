@@ -17,7 +17,10 @@ before archive compression, and 17.47 MB in the distributed archive.
 | `VEQDB-equilibria-20260920.tar.gz` | The release record set: 13,291 compact-JSON records, one file per accepted case, under 267 device directories. |
 | `VEQDB-png-partial-20260920.tar.gz` | 45 rendered equilibrium images covering 16 devices. Partial and illustrative; not a complete image set. |
 | `tokamak_data_2026-09-09.xlsx` | Device-survey workbook. |
-| `scripts/` | Manuscript figure source, style definitions and the G-EQDSK projection snapshot. |
+| `FORMAT.md` | The compact-JSON format specification: key table, units, encoding rules and the verification commands. |
+| `SHA256SUMS` | SHA-256 of each distributed download. |
+| `manifests/VEQDB-equilibria-20260920.sha256` | One SHA-256 per record, 13,291 lines, with the archive's top-level directory as the path prefix. |
+| `scripts/` | Manuscript figure source, style definitions, the G-EQDSK projection snapshot, and the two record-verification scripts. |
 
 `VEQDB-equilibria-20260920.tar.gz` is the authoritative public record set.
 
@@ -36,14 +39,47 @@ distributed in this repository**:
 
 Consequently `scripts/build_figures.py` cannot run from this repository alone:
 it reads the figure inputs listed above, and it imports a `gfile_projection`
-`settings` module that is not present here.
+`settings` module that is not present here. The two record-verification scripts
+named under Reading A Record below have no such dependency.
 
 ## Reading A Record
 
-Each record is a flat JSON object. This repository does **not** include a format
-specification, a key table or a unit table, and it does not include a checksum
-manifest, so a reader cannot verify a record against a published reference using
-this repository alone. The key semantics are defined in the manuscript.
+Each record is a flat JSON object. Its key table, units and encoding rules are
+specified in [`FORMAT.md`](FORMAT.md), which restates Table A.7 of the
+manuscript and is self-contained: a reader needs nothing outside this
+repository to interpret a record.
+
+## Verifying A Record
+
+The distributed downloads are covered by [`SHA256SUMS`](SHA256SUMS):
+
+```sh
+sha256sum -c SHA256SUMS
+```
+
+Individual records are covered by
+[`manifests/VEQDB-equilibria-20260920.sha256`](manifests/VEQDB-equilibria-20260920.sha256),
+one SHA-256 per record with the archive's top-level directory as the path
+prefix:
+
+```sh
+tar xzf VEQDB-equilibria-20260920.tar.gz
+sha256sum -c manifests/VEQDB-equilibria-20260920.sha256
+```
+
+Two checks run against the extracted records themselves, and need only the
+records and NumPy:
+
+```sh
+python3 scripts/verify_field_order.py VEQDB-equilibria-20260920
+python3 scripts/verify_record_consistency.py VEQDB-equilibria-20260920
+```
+
+`verify_field_order.py` checks the field order and field count of `FORMAT.md`
+§2 against every record; `verify_record_consistency.py` checks the identities
+of `FORMAT.md` §4, which exercise units, sign conventions and ordering but not
+the fitting that produced the coefficients. `FORMAT.md` §5 carries the same
+commands.
 
 ## Reconstruction
 
