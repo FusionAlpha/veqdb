@@ -1,0 +1,327 @@
+{
+  "schema": "veqdb-png-records-v1",
+  "png_archive": "VEQDB-png-partial-20260920.tar.gz",
+  "pairing_basis": "Same case identifier; checksums identify the paired files. This manifest does not certify a pixel-identical rerender.",
+  "supplement_provenance": {
+    "repository": "https://github.com/FusionAlpha/veqdb-dev",
+    "revision": "eba15100d5c1027cc7ee8f7a01c917d4bf9bd94c",
+    "note": "The three data/figure-data records are copied byte-for-byte from these paths at the source revision."
+  },
+  "entries": [
+    {
+      "png_path": "VEQDB-png-partial-20260920/ASDEX_Upgrade/ASDEX_Upgrade__GAQ_2976120748_0016.png",
+      "png_sha256": "cd508a9744089ecb331afe1c11c1603b45abc730ce547cb49c5734fc0d7d535b",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/ASDEX_Upgrade/ASDEX_Upgrade__GAQ_2976120748_0016.compact.json",
+      "record_sha256": "c23f2dea4923193fe193a62ed7eff05c03de1470d199d57a6a08e5e95fef39cd"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/ASDEX_Upgrade/ASDEX_Upgrade__GAQ_2976120748_0025.png",
+      "png_sha256": "66b28b766bc54a317d9a0932e48e2492587d75bff6a730fc117437efeedc60ad",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/ASDEX_Upgrade/ASDEX_Upgrade__GAQ_2976120748_0025.compact.json",
+      "record_sha256": "29d681e717e18458889f886e3cfce5e201597d08af7bed6337d33b179660c65b"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/ASDEX_Upgrade/ASDEX_Upgrade__GAQ_2976120748_0039.png",
+      "png_sha256": "709930c48da8a00b9534253d7e3842c677f4450813b393a899b4655561cea019",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/ASDEX_Upgrade/ASDEX_Upgrade__GAQ_2976120748_0039.compact.json",
+      "record_sha256": "f673e273c18cb9062cd9a65ed625bfd68e1eecce8a25c57ef855e37e17c06d17"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/Alcator_C-Mod/Alcator_C-Mod__GAQ_2306425431_0046.png",
+      "png_sha256": "7a4b7ff84e033892bfc4898353c4745919f7681301b444f07bb94b2eb95cccb7",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/Alcator_C-Mod/Alcator_C-Mod__GAQ_2306425431_0046.compact.json",
+      "record_sha256": "0778a12b82ec9adf7bccefa01752a2bae68024c2e1a6c6dd35989536b7276f25"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/Alcator_C-Mod/Alcator_C-Mod__GAQ_2306425431_0056.png",
+      "png_sha256": "7c73d4cacc8a367543cf73c95204bd1f99212ccc24ae8ffdac6de6b3db3e4300",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/Alcator_C-Mod/Alcator_C-Mod__GAQ_2306425431_0056.compact.json",
+      "record_sha256": "b75c551f92785dc81c085c3d6da6c337274c88f14dd0318efc6cbeb37fd0d0f4"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/Alcator_C-Mod/Alcator_C-Mod__GAQ_2306425431_0061.png",
+      "png_sha256": "3870baf091c903b323e7ca0271b5f9ce008799de3fc70c6968bde7cee5b0a671",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/Alcator_C-Mod/Alcator_C-Mod__GAQ_2306425431_0061.compact.json",
+      "record_sha256": "e7119d1523b04db011d51137b5f86429f4a02fb87037a5ccf4e10b3ae1d1cb3c"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/DIII-D/DIII-D__GAQ_2994001512_0008.png",
+      "png_sha256": "20f9a48c96cd410eaf9b596204c55fa236cfc1dea74fced88bf9ce740dc98c44",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/DIII-D/DIII-D__GAQ_2994001512_0008.compact.json",
+      "record_sha256": "a7cdd899fb98676f7e3bf85aafab371f816b3aab20f0603ea9afa76f4fff1a29"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/DIII-D/DIII-D__GAQ_2994001512_0025.png",
+      "png_sha256": "89d8688a7e80cf9f685ef385148b9094a528ad51293ddd9eda459f8be0555058",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/DIII-D/DIII-D__GAQ_2994001512_0025.compact.json",
+      "record_sha256": "ac9d45ca41b24ca93984d8887e50464fde8f642645630c012c99859ca34864df"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/DIII-D/DIII-D__GAQ_2994001512_0026.png",
+      "png_sha256": "1b8cd08e9f59dd6bf2bbc7ccc9f92602fa575fdb71d365cc5da38c0457d52143",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/DIII-D/DIII-D__GAQ_2994001512_0026.compact.json",
+      "record_sha256": "c2c14ab7a36013214f7842d8591776bf8df552d0b0b50b60118b8c3081278164"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/EAST/EAST__GAQ_3853493472_0000.png",
+      "png_sha256": "ad765ad9ecf62ffa45ce11afa61ae3ba3d58a65292a35084fe333a577079c50d",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/EAST/EAST__GAQ_3853493472_0000.compact.json",
+      "record_sha256": "7c2c9d60f1b2227688ebd54a1088a8abc74f89e8fba5d4efa7f80ae219e826a1"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/EAST/EAST__GAQ_3853493472_0013.png",
+      "png_sha256": "5522eb044802ca5e1212b8b70daf57a34986df2b3abdeeecd9463bc6835f5533",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/EAST/EAST__GAQ_3853493472_0013.compact.json",
+      "record_sha256": "4f9cc6dc842a257127b833b00d30461fa6cdd5c7806a5b549f9cc9a6b55ccfed"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/EAST/crossdev_east_p100.png",
+      "png_sha256": "e557e8c3fe13cb2965967f35329c217cc13f54aba1978714e1171386a3291fee",
+      "record_archive": null,
+      "record_path": "data/figure-data/crossdev_east_p100.compact.json",
+      "record_sha256": "ad2b1f0cf3b2d0c036529d1a9d35b79ac9ec95308c175ed43b06961e0ffe45ae"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/HL-2A/HL-2A__GAQ_2062324849_0043.png",
+      "png_sha256": "20473939015522d5b794b73b967a3489564298f8e4eaf7941d79f1f26fe045f9",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/HL-2A/HL-2A__GAQ_2062324849_0043.compact.json",
+      "record_sha256": "93072798c47c71b3b39a279566f090f6e1351eab7fbef1c9805b3a0443931793"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/HL-2A/HL-2A__GAQ_2062324849_0045.png",
+      "png_sha256": "59b62e0b790b771db7e445e37150025cbc2067d916c69910bed2f49f6ce11360",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/HL-2A/HL-2A__GAQ_2062324849_0045.compact.json",
+      "record_sha256": "fc19f1f395cd2929d998bec76c311e0cb7d36d8bffbdbb0aaaf5d75d77e76409"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/HL-2A/HL-2A__GAQ_2062324849_0048.png",
+      "png_sha256": "3ed0831ba1435bee18e75b289403e3b8277ec09b2240667244ee9cf3a76f5e7a",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/HL-2A/HL-2A__GAQ_2062324849_0048.compact.json",
+      "record_sha256": "64e763408a9bdc18b42d3973bf52660a40ba27fb5d992366825d88138cf58756"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/ITER_ITER-FEAT/ITER_ITER-FEAT__GAQ_3440335210_0008.png",
+      "png_sha256": "490b70eb9b9c3cfb7268be6f2a5407103b269cd368a4f8c6075551eafa13bc65",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/ITER_ITER-FEAT/ITER_ITER-FEAT__GAQ_3440335210_0008.compact.json",
+      "record_sha256": "648eefedeb8855c6474836350fe867493e3c591ce7371ee8f3ed9f24c5b0f505"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/ITER_ITER-FEAT/ITER_ITER-FEAT__GAQ_3440335210_0047.png",
+      "png_sha256": "7e73c8d3b9f5c4b925b314e16c723c0876991fce4713e26428576542356ae075",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/ITER_ITER-FEAT/ITER_ITER-FEAT__GAQ_3440335210_0047.compact.json",
+      "record_sha256": "4c2705aa8c696992f5551f8a727048440eb363f960b3ffc247b81bf1fd91887a"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/ITER_ITER-FEAT/crossdev_iter_p100.png",
+      "png_sha256": "d72c523d481c44321e7fe9d6d1359ba108622b270b2fb6fd75031de75376ea77",
+      "record_archive": null,
+      "record_path": "data/figure-data/crossdev_iter_p100.compact.json",
+      "record_sha256": "0a12b846a59a708b22d6e136c880feb822afdbe648d21da13bd4dec1b020093a"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/JET_19649/JET_19649__GAQ_914040581_0019.png",
+      "png_sha256": "d6d53a849fee4512d5a142c9b83e6eafa81b1581ce196b9ac0a651aa61dea87c",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/JET_19649/JET_19649__GAQ_914040581_0019.compact.json",
+      "record_sha256": "d644abd70f4a54ff6f06b2167c059d2b8a199998ebfe08d1be1e05dd2f121f18"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/JET_19649/JET_19649__GAQ_914040581_0020.png",
+      "png_sha256": "32574b346b0d7f7277119a3fb1ce2f396a90dc340e32ea34225f1d9b6047353b",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/JET_19649/JET_19649__GAQ_914040581_0020.compact.json",
+      "record_sha256": "2f02859eeb55fdf2aab2c83edd4a7595a5958543041a8848970d3b3895144731"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/JET_19649/JET_19649__GAQ_914040581_0021.png",
+      "png_sha256": "88a52461497e953621570c57774f253e9fc08d955f1ea719a9baedadd26a4e98",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/JET_19649/JET_19649__GAQ_914040581_0021.compact.json",
+      "record_sha256": "a1b8bc968e555383cbbf6dced9ba6c825a8e517d8db244df92d79c7037fd04c2"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/JT-60SA/JT-60SA__GAQ_1528645832_0026.png",
+      "png_sha256": "f119b3611707fe83a23cd6210ad7c345316558934b0fd212d2bdf687a122ec2c",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/JT-60SA/JT-60SA__GAQ_1528645832_0026.compact.json",
+      "record_sha256": "a08cf36994a27fe40539813218eb2a0ac4576fc3964c4deb9cb8952d6af2dfad"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/JT-60SA/JT-60SA__GAQ_1528645832_0036.png",
+      "png_sha256": "015144275005d9f1a7026a324eea4268a6998b4346f2a2fc628abee2365d6262",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/JT-60SA/JT-60SA__GAQ_1528645832_0036.compact.json",
+      "record_sha256": "d96eb01d1eb9f849a9eae5c69f4ffdc64e3ee4f3b1107b44186aece527a38c3a"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/JT-60SA/JT-60SA__GAQ_1528645832_0051.png",
+      "png_sha256": "02bcbff1c1397d089e47dba303115794b95a469f66735eae29ffa9c4df0e2721",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/JT-60SA/JT-60SA__GAQ_1528645832_0051.compact.json",
+      "record_sha256": "75fe0c82c5a54711f5dd31c7a793ab75a8478be69f1b476b025b056326de00e9"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/KSTAR/KSTAR__GAQ_3096886381_0000.png",
+      "png_sha256": "2a472187a66fb6ae91fa08cd41851648f75b9771a5dc9088961b25ffc7283249",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/KSTAR/KSTAR__GAQ_3096886381_0000.compact.json",
+      "record_sha256": "47e3122138e437c3476d58659818c9cd005587086f0d16bf72c5eefa696620f3"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/KSTAR/KSTAR__GAQ_3096886381_0021.png",
+      "png_sha256": "e2b571e2ae9a8e033df0bba4241575c995e017105b72cd81cf4d4cdbe2b473d5",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/KSTAR/KSTAR__GAQ_3096886381_0021.compact.json",
+      "record_sha256": "53d712e6ff27b2afa9a4f4d2323ce4df1696ec7ff22d2a10a154011b2669c50f"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/KSTAR/KSTAR__GAQ_3096886381_0090.png",
+      "png_sha256": "4675ab84b4145e527a851c5cbda653c7e4842b2e08b3d04361af3c54da819a50",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/KSTAR/KSTAR__GAQ_3096886381_0090.compact.json",
+      "record_sha256": "f1ec60765e5991779570f78a50cd7a8982ccb7b8af83d3c4de7e60a7efb016e0"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/MAST_Upgrade/MAST_Upgrade__GAQ_932149194_0055.png",
+      "png_sha256": "745fe1c761c57cc55c989698d0cc065890653ac8cac6748c5e9356c2e66c3897",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/MAST_Upgrade/MAST_Upgrade__GAQ_932149194_0055.compact.json",
+      "record_sha256": "af6d3adc7571e519bcb1ea53af84acd54c88bc86dbb08160deb1c8b0a1648caa"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/MAST_Upgrade/MAST_Upgrade__GAQ_932149194_0057.png",
+      "png_sha256": "1f044508d27a052acaf356774d1c56d0d4e2c62d852c4f71885c2714d0ce0189",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/MAST_Upgrade/MAST_Upgrade__GAQ_932149194_0057.compact.json",
+      "record_sha256": "6c8640b76e776de79f1794517a007f399ff32e21d17ac240e680c506c9a03c3f"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/MAST_Upgrade/crossdev_mast-u_p100.png",
+      "png_sha256": "9123f10b0a1e70125e5b5fd17bc31dd31096a90b8dc31efeb557ad8e2552deb2",
+      "record_archive": null,
+      "record_path": "data/figure-data/crossdev_mast-u_p100.compact.json",
+      "record_sha256": "0f0126e949f1904f688514e8fea72543ad26f9d5c51e62a885d35fad1e71bb45"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/NSTX-U/NSTX-U__GAQ_1491722839_0019.png",
+      "png_sha256": "ef82eebf436a537e25d90cceed82e720015256a5c23332dee8136c63460973b8",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/NSTX-U/NSTX-U__GAQ_1491722839_0019.compact.json",
+      "record_sha256": "1639263ab206fd4ebe6a1a9a54b3348388ddb4094f728f721ac5578819fd4057"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/NSTX-U/NSTX-U__GAQ_1491722839_0025.png",
+      "png_sha256": "9778a82a986f321af1646caf60f36fafdc573fc7e9762e483faf494b7b70c621",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/NSTX-U/NSTX-U__GAQ_1491722839_0025.compact.json",
+      "record_sha256": "35e9ddbca7637cf02ed4dcf9b5ed662ea75e8abe1677e14801229a40528d0c94"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/NSTX-U/NSTX-U__GAQ_1491722839_0052.png",
+      "png_sha256": "0311446ed473407319eb4b46a3afade2d6037cd2efd3f0123ad296b1918c7ea2",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/NSTX-U/NSTX-U__GAQ_1491722839_0052.compact.json",
+      "record_sha256": "865f24fb08557c1564cbb917a5c89e66419eb95d0e134edfe77730cb9770a44f"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/SPARC_V2/SPARC_V2__GAQ_3297628522_0018.png",
+      "png_sha256": "8c1201fb2391c2798882c9afc64fb107ed7d725408c415892e5b6fcbf60c1813",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/SPARC_V2/SPARC_V2__GAQ_3297628522_0018.compact.json",
+      "record_sha256": "8faa0e14b45670006d39f61e5b07aac9c39695930bef329b146e530ce27cbef6"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/SPARC_V2/SPARC_V2__GAQ_3297628522_0033.png",
+      "png_sha256": "d3fe6bb92b447bc9a2ace2b0fbd915d454484de316864c0c3f8dd2d7eb0c13e0",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/SPARC_V2/SPARC_V2__GAQ_3297628522_0033.compact.json",
+      "record_sha256": "31bfcca2327cb707f8d6bc1110d53869a4374278d72889a253d18f9783ddf2ab"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/SPARC_V2/SPARC_V2__GAQ_3297628522_0044.png",
+      "png_sha256": "ecbd28879f6137007c4f1aa096e010decdf324e0f48e27d493e84a4a32023aff",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/SPARC_V2/SPARC_V2__GAQ_3297628522_0044.compact.json",
+      "record_sha256": "0b377b6b8632da9fc8fcf3e58cb3839f66b4845bb0cfd2d2d42d0eaa6ceb13bd"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/TCV/TCV__GAQ_2200308419_0042.png",
+      "png_sha256": "d47026daa177531dfc25a1b7cb4b1067d5ee6a60aed60248305a7f78ee4cafa5",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/TCV/TCV__GAQ_2200308419_0042.compact.json",
+      "record_sha256": "6c47f68bf2705dd886c5450f655c4d4f2f9e398e03a89ef48593632a47b1e94d"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/TCV/TCV__GAQ_2200308419_0057.png",
+      "png_sha256": "fc1b605f7602ef1a4e0c85f70e2f2f58e7a1a6fbf52b088e8a040f8ca6835d58",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/TCV/TCV__GAQ_2200308419_0057.compact.json",
+      "record_sha256": "5db4cdd58f67c2b2d696970d8b275da5099f2506d445f181385d2821c6c1e8bb"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/TCV/TCV__GAQ_2200308419_0064.png",
+      "png_sha256": "07050711837993c728795d42342f0a57fb2b7cb28b93b24d9d459bb420382e64",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/TCV/TCV__GAQ_2200308419_0064.compact.json",
+      "record_sha256": "623f46f948eb6c7df83b7291d94967873683135a69545f97528a40a94c652116"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/TFTR/TFTR__GAQ_988282023_0033.png",
+      "png_sha256": "f8ab4cc33b02d7b96ebb6798c9ed98abf5d8142ca7f095247bff41d860efefb3",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/TFTR/TFTR__GAQ_988282023_0033.compact.json",
+      "record_sha256": "ec52ddd385a26336ed9e0e8a9482dc6c005964b9b684ba2e20993949794e2084"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/TFTR/TFTR__GAQ_988282023_0034.png",
+      "png_sha256": "f6ac8778eab8e5fa7ee3789040fbd223744dfd4629cef60a84b6874f3d6c658b",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/TFTR/TFTR__GAQ_988282023_0034.compact.json",
+      "record_sha256": "a62c132919e197c5fc1f2ead2cf8bb819916a26a88c572efb642e1ce36ecb4a0"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/TFTR/TFTR__GAQ_988282023_0048.png",
+      "png_sha256": "3fecc91fda9cd694f5ad32abdd0a8efea4945b3c2272cf9d520a1c8068fa8312",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/TFTR/TFTR__GAQ_988282023_0048.compact.json",
+      "record_sha256": "495aab1f7b5096cb21251a0b3d90c79024a826210b0e3288b81fb9dc9f288b6e"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/WEST/WEST__GAQ_2761710824_0019.png",
+      "png_sha256": "ac6067ae657617257d799501180b05274b8a7d87f9fc37c4c36874d8364568cb",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/WEST/WEST__GAQ_2761710824_0019.compact.json",
+      "record_sha256": "ab4ff54f9f2910e2e934a17517d25e70097e713648cd06d37067419136676d9e"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/WEST/WEST__GAQ_2761710824_0020.png",
+      "png_sha256": "f8fa121b85c84cb37bc4520668e1ca667d9647b506a1cbb686ed9da40c33b6d3",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/WEST/WEST__GAQ_2761710824_0020.compact.json",
+      "record_sha256": "d8efe8cbce4fe949496851d4ae8542318ff1069a29838fc5cf1c5fb05755a422"
+    },
+    {
+      "png_path": "VEQDB-png-partial-20260920/WEST/WEST__GAQ_2761710824_0049.png",
+      "png_sha256": "5bdfa034fce2e34be55bb380fab4fc35091f28762f95a7211eba9598bbc4dbe5",
+      "record_archive": "VEQDB-equilibria-20260920.tar.gz",
+      "record_path": "VEQDB-equilibria-20260920/WEST/WEST__GAQ_2761710824_0049.compact.json",
+      "record_sha256": "cea92b05062f3fd8c8fa6607aedda5a6a5d46fa26fe073590783c336daab3ecd"
+    }
+  ]
+}
