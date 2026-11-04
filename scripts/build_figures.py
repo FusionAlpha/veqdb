@@ -1,8 +1,9 @@
 """Rebuild the VEQDB manuscript figures from the frozen release inputs.
 
 The script does not alter reported numbers. Its conversion branch needs the
-VEQPy compact-record and G-EQDSK projection interfaces; all inputs and accepted
-records required for the rendering branch are local to this repository.
+VEQPy compact-record and G-EQDSK projection interfaces. Full rendering also
+requires the frozen inputs listed under Not Included In This Repository in
+the README.
 """
 
 from __future__ import annotations
@@ -380,7 +381,7 @@ def build_start_profiles() -> None:
             top_extra_in=0.08,
         ),
         wspace=0.26,
-        hspace=0.10,
+        hspace=0.20,
     )
 
     fields = (
@@ -540,12 +541,13 @@ def build_reference_comparison() -> None:
 
     fig = plt.figure(figsize=(DOUBLE_FIGURE_WIDTH_IN, REFERENCE_COMPARISON_HEIGHT_IN))
     grid = fig.add_gridspec(
-        4,
-        3,
+        2,
+        1,
+        height_ratios=(1, 3),
         **physical_layout(
             DOUBLE_FIGURE_WIDTH_IN,
             REFERENCE_COMPARISON_HEIGHT_IN,
-        left_in=0.54,
+        left_in=0.58,
         right_in=0.12,
         top_extra_in=0.15,
         bottom_extra_in=0.08,
@@ -553,10 +555,26 @@ def build_reference_comparison() -> None:
         wspace=0.16,
         hspace=0.32,
     )
-    geometry_axes = [fig.add_subplot(grid[0, column_index]) for column_index in range(3)]
-    surface_error_axes = [fig.add_subplot(grid[1, column_index]) for column_index in range(3)]
-    pressure_axes = [fig.add_subplot(grid[2, column_index]) for column_index in range(3)]
-    q_axes = [fig.add_subplot(grid[3, column_index]) for column_index in range(3)]
+    geometry_grid = grid[0].subgridspec(1, 3, wspace=0.16)
+    geometry_axes = [fig.add_subplot(geometry_grid[0, column_index]) for column_index in range(3)]
+    # Error panels share normalized flux across rows and devices, while each
+    # physical error retains its own logarithmic scale shared across columns.
+    profile_grid = grid[1].subgridspec(3, 3, wspace=0.16, hspace=0.12)
+    profile_axes = []
+    for row_index in range(3):
+        row_axes = []
+        for column_index in range(3):
+            axis = fig.add_subplot(
+                profile_grid[row_index, column_index],
+                sharex=(
+                    profile_axes[0][0] if profile_axes
+                    else row_axes[0] if row_axes else None
+                ),
+                sharey=row_axes[0] if row_axes else None,
+            )
+            row_axes.append(axis)
+        profile_axes.append(row_axes)
+    surface_error_axes, pressure_axes, q_axes = profile_axes
     # Sparse source dashes identify the G-EQDSK curve without masking closely
     # overlapping fits.  Drawing the precision sweep from high to low leaves
     # lower-budget departures visible instead of covering every colour.
@@ -774,10 +792,20 @@ def build_reference_comparison() -> None:
             (safety_factor, r"$|\Delta |q||/|q|_{\mathrm{G\! -\! EQDSK}}$"),
         ):
             profile_axis.set_xlim(0.0, 1.0)
-            profile_axis.set_xlabel(r"$\hat{\psi}$")
+            bottom_row = profile_axis is safety_factor
+            profile_axis.set_xlabel(r"$\hat{\psi}$" if bottom_row else "")
             profile_axis.set_ylabel(ylabel if column_index == 0 else "")
             quantitative_grid(profile_axis)
-            profile_axis.tick_params(top=True, right=True)
+            profile_axis.tick_params(
+                axis="x", which="both", top=True, bottom=True,
+                labelbottom=bottom_row, labeltop=False,
+            )
+            profile_axis.tick_params(
+                axis="y", which="both", left=True, right=True,
+                labelleft=column_index == 0, labelright=False,
+            )
+    surface_error_axes[0].set_xticks(np.linspace(0.0, 1.0, 6))
+    surface_error_axes[0].xaxis.set_major_formatter(FormatStrFormatter("%.1f"))
     surface_positive = np.concatenate([error[error > 0.0] for error in surface_errors])
     pressure_positive = np.concatenate([error[error > 0.0] for error in pressure_errors])
     q_positive = np.concatenate([error[error > 0.0] for error in q_errors])
