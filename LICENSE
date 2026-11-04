@@ -1,0 +1,14 @@
+VEQDB licensing
+===============
+
+Author-created VEQDB dataset content is released under Creative Commons
+Attribution 4.0 International (CC BY 4.0), as recorded in the Figshare deposit:
+https://doi.org/10.6084/m9.figshare.34485114
+https://creativecommons.org/licenses/by/4.0/legalcode
+
+The standalone compact-record codec under src/veqdb/ retains the BSD 3-Clause
+licence and copyright notice in LICENSES/veqpy-BSD-3-Clause.txt.
+
+Third-party material retains its applicable upstream terms. Source repositories
+and retained notices are identified in SOURCE_DATA.md and THIRD_PARTY_NOTICES.md.
+Other software is covered by its own applicable notices.

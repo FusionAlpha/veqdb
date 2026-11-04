@@ -1,0 +1,10 @@
+Source: https://github.com/Youjunhu/GTAW/blob/7ae4929f2b4e56637f0462a9a186d92edb17f316/main.f90
+Revision: 7ae4929f2b4e56637f0462a9a186d92edb17f316
+
+Verbatim software notice and author attribution from the source comments:
+
+  !GTAW is a free software, which means that you can redistribute it and/or modify it under the terms of the GNU General Public License.
+  !Code author: Youjun Hu (Email: yjhu@ipp.cas.cn), Institute of Plasmas Physics, Chinese Academy of Sciences
+
+The upstream statement does not specify a GPL version. This copy records
+that statement without assigning a version or extending it to source data.

@@ -2,9 +2,9 @@
 
 VEQDB is the release repository for a compact database of fixed-boundary
 tokamak equilibria represented with MXH--Chebyshev geometry and physical-profile
-roots. It accompanies the manuscript *VEQDB: A Compact and Reconstructible
-Multi-Device Tokamak Equilibrium Database,
-https://arxiv.org/abs/2609.23296*.
+roots. It accompanies the manuscript *A compact and reconstructible multi-device
+tokamak equilibrium database*. An earlier version is available as
+[arXiv:2609.23296](https://arxiv.org/abs/2609.23296).
 
 The initial release contains 13,291 accepted equilibria from 267 conventional
 and spherical tokamak devices. The compact-JSON record set occupies 41.24 MB
@@ -14,6 +14,11 @@ Three additional G-EQDSK-derived reference records are distributed separately
 in `data/figure-data/`. Together with the 13,291 GAQ parameter-sampled records
 in the original archive, they provide 13,294 records. The original archive and
 its per-record checksum manifest are unchanged.
+
+The dataset is archived in [Figshare](https://doi.org/10.6084/m9.figshare.34485114)
+under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Cite this DOI
+when using the dataset. This repository provides the maintained data, standalone
+compact-record codec and verification scripts.
 
 ## Contents
 
@@ -30,6 +35,8 @@ its per-record checksum manifest are unchanged.
 | `scripts/` | Manuscript figure source, style definitions, the G-EQDSK projection snapshot, and record and PNG-pairing verification scripts. |
 | `src/veqdb/` | Standalone compact-record decoder and encoder, including diagnostic recomputation. |
 | `tests/` | Golden byte-parity, round-trip, validation and resolution-override tests. |
+| `SOURCE_DATA.md` | Source repositories, fixed revisions and paths for the external EAST, CHEASE and EFIT inputs. |
+| `data/source-provenance.json` | Machine-readable source identifiers, raw-file sizes and SHA-256 checksums. |
 
 `VEQDB-equilibria-20260920.tar.gz` remains the authoritative initial record
 set. Downloading that archive alone does not include the three supplementary
@@ -69,15 +76,18 @@ distributed in this repository**:
 - the per-device release archives, the per-device device manifests and the
   release summary;
 - the device-survey sweep configuration;
-- the retained G-EQDSK reference files and their source metadata;
+- the retained G-EQDSK reference files; public source identifiers for EAST,
+  CHEASE and EFIT are recorded in `SOURCE_DATA.md`;
 - the remaining frozen figure-data records and figure inputs used by
   `scripts/build_figures.py`, apart from the three supplementary records above;
 - the solver.
 
-Consequently `scripts/build_figures.py` cannot run from this repository alone:
-it reads the figure inputs listed above, and it imports a `gfile_projection`
-`settings` module that is not present here. The two record-verification scripts
-named under Reading A Record below have no such dependency.
+Consequently `scripts/build_figures.py` additionally requires the frozen inputs
+listed above and the VEQPy package context used by the projection snapshot.
+The `settings` function is present in
+`scripts/gfile_projection/implementation/__init__.py`; that snapshot imports
+solver components outside the standalone VEQDB package. The record-verification
+scripts below and the compact-record codec have no such dependency.
 
 ## Reading A Record
 
@@ -154,9 +164,10 @@ payload = to_compact_json(result, precision=None)
 
 `from_compact_json` returns a `FitResult` containing the raw reconstruction
 roots, radial profiles and geometry coefficients. It is a compact-record
-representation, not a full solver `Equilibrium` object. Optional `Nr` and `Nt`
-arguments interpolate the four radial profiles onto new Lobatto nodes while
-leaving the shape coefficients unchanged. The encoder recomputes the diagnostic
+representation, not a full solver `Equilibrium` object. The optional `Nr`
+argument interpolates the four radial profiles onto new Lobatto nodes, and
+`Nt` sets the angular evaluation resolution. Both leave the shape coefficients
+unchanged. The encoder recomputes the diagnostic
 fields from the roots; stored diagnostics and unknown JSON fields are not
 authoritative reconstruction inputs.
 
@@ -181,8 +192,14 @@ reconstruction.
 
 ## License and Citation
 
-No repository-wide license is granted, and citation metadata has not been
-added. The ported codec retains its scoped VEQPy BSD 3-Clause notice in
-`LICENSES/veqpy-BSD-3-Clause.txt`; see `THIRD_PARTY_NOTICES.md` for source
-provenance. These code notices do not change the licensing of the data or
-figures.
+The VEQDB dataset is available under CC BY 4.0 through the
+[Figshare deposit](https://doi.org/10.6084/m9.figshare.34485114).
+The standalone codec retains its BSD 3-Clause licence in
+[`LICENSES/veqpy-BSD-3-Clause.txt`](LICENSES/veqpy-BSD-3-Clause.txt).
+See [`LICENSE`](LICENSE) for scope and
+[`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) for upstream attribution.
+
+The external EAST, CHEASE and EFIT inputs are identified by source repository,
+fixed revision and file path in [`SOURCE_DATA.md`](SOURCE_DATA.md).
+Their raw-file checksums are recorded in
+[`data/source-provenance.json`](data/source-provenance.json).

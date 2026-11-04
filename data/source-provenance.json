@@ -1,0 +1,40 @@
+{
+  "schema": "veqdb.manuscript-source-provenance.v1",
+  "verified_on": "2026-11-04",
+  "scope": "Raw public files identified as the EAST, CHEASE and EFIT manuscript inputs; hashes precede conversion and sign transformations.",
+  "entries": [
+    {
+      "filename": "g048059.03650",
+      "manuscript_use": "Figure 2 EAST reference and supplementary EAST compact record",
+      "repository": "Youjunhu/GTAW",
+      "revision": "7ae4929f2b4e56637f0462a9a186d92edb17f316",
+      "repository_path": "gfile/g048059.03650",
+      "download_url": "https://raw.githubusercontent.com/Youjunhu/GTAW/7ae4929f2b4e56637f0462a9a186d92edb17f316/gfile/g048059.03650",
+      "bytes": 661837,
+      "sha256": "df8f073bbad202d799b70d0bc2479c9cbcc2d64b729c1019f2575b14de961842",
+      "repository_software_notice": "GNU GPL software statement, version unspecified"
+    },
+    {
+      "filename": "CHEASE.geqdsk",
+      "manuscript_use": "H-mode conversion benchmark",
+      "repository": "FusionAlpha/veqpy",
+      "revision": "2b64c9a1bffddc25c176bd52231bc3b481715c6c",
+      "repository_path": "data/CHEASE.geqdsk",
+      "download_url": "https://raw.githubusercontent.com/FusionAlpha/veqpy/2b64c9a1bffddc25c176bd52231bc3b481715c6c/data/CHEASE.geqdsk",
+      "bytes": 288006,
+      "sha256": "c617988d8e684ed40766e1c8caa3b834674dc0c2db6693064019d88f1d57f704",
+      "repository_software_notice": "BSD-3-Clause repository software notice"
+    },
+    {
+      "filename": "EFIT.geqdsk",
+      "manuscript_use": "X-point conversion benchmark",
+      "repository": "FusionAlpha/veqpy",
+      "revision": "2b64c9a1bffddc25c176bd52231bc3b481715c6c",
+      "repository_path": "data/EFIT.geqdsk",
+      "download_url": "https://raw.githubusercontent.com/FusionAlpha/veqpy/2b64c9a1bffddc25c176bd52231bc3b481715c6c/data/EFIT.geqdsk",
+      "bytes": 1229642,
+      "sha256": "cbeb93c072b476dd9ee38ef3e0192bc6d6cb239806e2c35efe03adde18c7a8e6",
+      "repository_software_notice": "BSD-3-Clause repository software notice"
+    }
+  ]
+}
