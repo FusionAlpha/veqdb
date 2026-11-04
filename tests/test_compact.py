@@ -9,6 +9,7 @@ from dataclasses import replace
 from pathlib import Path
 
 import numpy as np
+import orjson
 import pytest
 
 import veqdb
@@ -25,10 +26,38 @@ SOURCE_FILES = (
     "veqpy/fitting/_spectral.py",
     "veqpy/fitting/_geometry.py",
 )
+# Full-precision diagnostics are recomputed by the numeric runtime. The observed
+# cross-runtime differences are below 1e-13 relative; allow 1e-12 with a 1e-18
+# absolute floor in each field's documented units. Reconstruction inputs, field
+# order and signed zero remain exact. Rounded golden files still compare bytes.
+DIAGNOSTIC_FIELDS = (
+    "R_axis", "Z_axis", "B_axis", "P_axis", "betat", "Ip", "qmin", "q0",
+    "q95", "Wth", "psi_lcfs",
+)
+DIAGNOSTIC_RTOL = 1e-12
+DIAGNOSTIC_ATOL = 1e-18
 
 
 def fixture_bytes(name: str) -> bytes:
     return (FIXTURES / name).read_bytes()
+
+
+def assert_matches_full_precision_reference(actual: bytes, expected: bytes) -> None:
+    actual_record, expected_record = json.loads(actual), json.loads(expected)
+    assert list(actual_record) == list(expected_record), "compact field order differs"
+    actual_roots = {k: v for k, v in actual_record.items() if k not in DIAGNOSTIC_FIELDS}
+    expected_roots = {k: v for k, v in expected_record.items() if k not in DIAGNOSTIC_FIELDS}
+    # Serializing the parsed roots preserves numeric types and signed zero while
+    # requiring identical float64 reconstruction values and metadata.
+    assert orjson.dumps(actual_roots) == orjson.dumps(expected_roots), "reconstruction inputs differ"
+    for field in DIAGNOSTIC_FIELDS:
+        actual_value, expected_value = actual_record[field], expected_record[field]
+        assert np.isfinite(actual_value) and np.isfinite(expected_value), field
+        np.testing.assert_allclose(
+            actual_value, expected_value,
+            rtol=DIAGNOSTIC_RTOL, atol=DIAGNOSTIC_ATOL, equal_nan=False,
+            err_msg=f"recomputed diagnostic {field}",
+        )
 
 
 def test_public_exports() -> None:
@@ -49,11 +78,18 @@ def test_east_precisions_match_source_golden(precision: int | None) -> None:
     source = (DATA / "crossdev_east_p100.compact.json").read_bytes()
     actual = to_compact_json(from_compact_json(source), precision=precision)
     label = "full" if precision is None else str(precision)
-    assert actual == fixture_bytes(f"east-precision-{label}.compact.json")
+    expected = fixture_bytes(f"east-precision-{label}.compact.json")
+    if precision is None:
+        assert_matches_full_precision_reference(actual, expected)
+    else:
+        assert actual == expected
 
 
 def test_full_precision_round_trip_is_byte_identical() -> None:
-    payload = fixture_bytes("east-precision-full.compact.json")
+    # Create the first encoding in this runtime; the frozen reference is checked
+    # separately above so its foreign-runtime diagnostics are not a byte oracle.
+    restored = from_compact_json(fixture_bytes("east-precision-full.compact.json"))
+    payload = to_compact_json(restored, precision=None)
     assert to_compact_json(from_compact_json(payload), precision=None) == payload
 
 
@@ -87,12 +123,45 @@ def test_decode_restores_raw_roots_and_integrated_flux() -> None:
 
 def test_stored_diagnostics_and_unknown_fields_are_not_authoritative() -> None:
     payload = fixture_bytes("east-precision-full.compact.json")
+    expected = to_compact_json(from_compact_json(payload), precision=None)
     record = json.loads(payload)
-    for name in ("R_axis", "B_axis", "betat", "Ip", "qmin", "q0", "q95", "Wth"):
+    for name in DIAGNOSTIC_FIELDS:
         record[name] = 12345.0
     record["unknown_future_field"] = {"ignored": True}
     restored = from_compact_json(json.dumps(record))
-    assert to_compact_json(restored, precision=None) == payload
+    assert to_compact_json(restored, precision=None) == expected
+
+
+def test_full_precision_reference_allows_roundoff_and_near_zero_floor() -> None:
+    expected = json.loads(fixture_bytes("east-precision-full.compact.json"))
+    expected["Z_axis"] = 0.0
+    actual = dict(expected)
+    actual["q0"] *= 1.0 + 0.5 * DIAGNOSTIC_RTOL
+    actual["Z_axis"] = 0.5 * DIAGNOSTIC_ATOL
+    assert_matches_full_precision_reference(orjson.dumps(actual), orjson.dumps(expected))
+
+
+@pytest.mark.parametrize("change", ["diagnostic", "near_zero", "nonfinite", "root", "signed_zero", "order"])
+def test_full_precision_reference_rejects_changes_beyond_its_contract(change: str) -> None:
+    expected = json.loads(fixture_bytes("east-precision-full.compact.json"))
+    expected["Z_axis"] = 0.0
+    expected["Z0"] = 0.0
+    actual = dict(expected)
+    if change == "diagnostic":
+        actual["q0"] *= 1.0 + 100.0 * DIAGNOSTIC_RTOL
+    elif change == "near_zero":
+        actual["Z_axis"] = 100.0 * DIAGNOSTIC_ATOL
+    elif change == "nonfinite":
+        actual["q0"] = float("nan")
+    elif change == "root":
+        actual["R0"] = float(np.nextafter(actual["R0"], np.inf))
+    elif change == "signed_zero":
+        actual["Z0"] = -0.0
+    else:
+        actual = dict(reversed(list(actual.items())))
+    with pytest.raises(AssertionError):
+        # json.dumps retains NaN for the nonfinite-value rejection check.
+        assert_matches_full_precision_reference(json.dumps(actual).encode(), json.dumps(expected).encode())
 
 
 def test_signed_zero_and_harmonic_trimming() -> None:

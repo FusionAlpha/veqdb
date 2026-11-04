@@ -161,7 +161,14 @@ fields from the roots; stored diagnostics and unknown JSON fields are not
 authoritative reconstruction inputs.
 
 The default output precision is 10 significant digits. Use `precision=None`
-for full-precision, byte-stable decode-to-encode round trips. The solver and
+to retain full floating-point precision. Re-encoding bytes produced in the same
+numeric runtime is byte-stable. Recomputed diagnostics may differ in the last
+floating-point digits across Python, library or platform builds, so the
+full-precision golden comparison uses `rtol=1e-12` and `atol=1e-18` in each
+diagnostic field's documented units. Reconstruction inputs, field order and
+signed zero are still compared exactly, as are the 10- and 12-digit golden
+encodings. These are test comparison tolerances; the codec's calculations,
+stored records and default output precision are unchanged. The solver and
 G-EQDSK projection are still separate: `scripts/gfile_projection/` retains the
 projection implementation as source provenance and is not a second public
 solver.
