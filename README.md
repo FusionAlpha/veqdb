@@ -28,6 +28,8 @@ its per-record checksum manifest are unchanged.
 | `manifests/VEQDB-equilibria-20260920.sha256` | One SHA-256 per record, 13,291 lines, with the archive's top-level directory as the path prefix. |
 | `manifests/VEQDB-png-partial-20260920.records.json` | All 45 PNG-to-record associations, with file checksums and supplement provenance. |
 | `scripts/` | Manuscript figure source, style definitions, the G-EQDSK projection snapshot, and record and PNG-pairing verification scripts. |
+| `src/veqdb/` | Standalone compact-record decoder and encoder, including diagnostic recomputation. |
+| `tests/` | Golden byte-parity, round-trip, validation and resolution-override tests. |
 
 `VEQDB-equilibria-20260920.tar.gz` remains the authoritative initial record
 set. Downloading that archive alone does not include the three supplementary
@@ -70,7 +72,7 @@ distributed in this repository**:
 - the retained G-EQDSK reference files and their source metadata;
 - the remaining frozen figure-data records and figure inputs used by
   `scripts/build_figures.py`, apart from the three supplementary records above;
-- the solver, and the compact-record codec.
+- the solver.
 
 Consequently `scripts/build_figures.py` cannot run from this repository alone:
 it reads the figure inputs listed above, and it imports a `gfile_projection`
@@ -132,28 +134,37 @@ the physical topology.
 
 ## Reconstruction
 
-Reconstructing equilibria from these records requires the VEQPy compact-record
-interface. [VEQPy](https://github.com/FusionAlpha/veqpy) is the solver and
-G-EQDSK I/O boundary for VEQDB. That interface is **not present** in the VEQPy
-revision this release was produced with,
-`2b64c9a1bffddc25c176bd52231bc3b481715c6c`, so the pinned revision cannot
-reconstruct a distributed record. The pinned revision does provide G-EQDSK
-reading and writing.
-
-The compact-record interface is published at
-<https://hub.veloalpha.cn/gitea/suyuexinghen/veqpy-pkg>, revision
-`586afb717099fcc1eb17ac5ffca4a10a95ae6d80`:
+The standalone `veqdb.compact` interface decodes and re-encodes compact records
+without importing VEQPy or Fusionprime. Install the package from this repository
+with Python 3.12 or newer:
 
 ```sh
-git clone https://hub.veloalpha.cn/gitea/suyuexinghen/veqpy-pkg.git
+python3 -m pip install .
 ```
 
-That revision decodes all 13,291 records in this release; the decoder entry
-point is `veqpy.fitting.compact`.
+```python
+from pathlib import Path
+from veqdb import from_compact_json, to_compact_json
 
-The G-EQDSK projection implementation is retained in
-`scripts/gfile_projection/` as source provenance so that its acceptance logic
-remains auditable. It is not presented as a second public solver.
+result = from_compact_json(
+    Path("data/figure-data/crossdev_east_p100.compact.json").read_bytes()
+)
+payload = to_compact_json(result, precision=None)
+```
+
+`from_compact_json` returns a `FitResult` containing the raw reconstruction
+roots, radial profiles and geometry coefficients. It is a compact-record
+representation, not a full solver `Equilibrium` object. Optional `Nr` and `Nt`
+arguments interpolate the four radial profiles onto new Lobatto nodes while
+leaving the shape coefficients unchanged. The encoder recomputes the diagnostic
+fields from the roots; stored diagnostics and unknown JSON fields are not
+authoritative reconstruction inputs.
+
+The default output precision is 10 significant digits. Use `precision=None`
+for full-precision, byte-stable decode-to-encode round trips. The solver and
+G-EQDSK projection are still separate: `scripts/gfile_projection/` retains the
+projection implementation as source provenance and is not a second public
+solver.
 
 ## Data Scope
 
@@ -163,5 +174,8 @@ reconstruction.
 
 ## License and Citation
 
-This repository contains no license file, and citation metadata has not been
-added. No license is granted by this repository.
+No repository-wide license is granted, and citation metadata has not been
+added. The ported codec retains its scoped VEQPy BSD 3-Clause notice in
+`LICENSES/veqpy-BSD-3-Clause.txt`; see `THIRD_PARTY_NOTICES.md` for source
+provenance. These code notices do not change the licensing of the data or
+figures.

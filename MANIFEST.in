@@ -1,0 +1,4 @@
+include THIRD_PARTY_NOTICES.md
+recursive-include LICENSES *.txt
+recursive-include tests *.py *.json
+recursive-include data/figure-data *.compact.json

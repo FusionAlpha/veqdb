@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "veqdb"
+version = "0.1.0"
+description = "Standalone codec for VEQDB compact equilibrium records"
+readme = "README.md"
+license-files = ["LICENSES/*.txt", "THIRD_PARTY_NOTICES.md"]
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=1.24",
+    "orjson>=3.9",
+    "scipy>=1.17.1",
+    "numba>=0.64.0",
+]
+
+[project.optional-dependencies]
+dev = ["build>=1.2", "pytest>=7.0"]
+
+[project.urls]
+Repository = "https://github.com/FusionAlpha/veqdb"
+
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["veqdb*"]
+namespaces = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-p no:cacheprovider"

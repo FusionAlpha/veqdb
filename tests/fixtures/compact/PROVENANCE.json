@@ -1,0 +1,26 @@
+{
+  "generator": "veqpy.fitting.compact",
+  "source_revision": "586afb717099fcc1eb17ac5ffca4a10a95ae6d80",
+  "source_note": "Relevant source files are unchanged at the checked-out VEQPy revision.",
+  "inputs": {
+    "east": "data/figure-data/crossdev_east_p100.compact.json",
+    "mast-u": "data/figure-data/crossdev_mast-u_p100.compact.json",
+    "iter": "data/figure-data/crossdev_iter_p100.compact.json"
+  },
+  "settings": "Default header; precision in filename; resolution override Nr=40, Nt=24 where named.",
+  "versions": {
+    "python": "3.14.6",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "numba": "0.67.0",
+    "orjson": "3.11.9"
+  },
+  "sha256": {
+    "east-precision-full.compact.json": "608ebef7ab4a760ee33f36a819c424cddec76d87a75084419b38a13152cb4415",
+    "east-precision-10.compact.json": "ab9e8983bd9e5dcaab8aec714701d21d1d56546b0335e64cdb0a582b87744c8b",
+    "east-precision-12.compact.json": "4ecf24c6f7e14e48df5ffb524c59dfb4a82f941fcf336ba40abf9b46261c6d0d",
+    "mast-u-precision-10.compact.json": "8efab84a79508fdf5524047ba0fcff04f656a95644382cc63867982eb28aaa3c",
+    "iter-precision-10.compact.json": "68c380c3cb42792b77a72282a0bcd49e5da3b8cb56c0c88bf8b1d0e0805f6180",
+    "east-nr40-nt24-precision-10.compact.json": "8aa044d50c78ebfe1b1af3d8e6476633eae856c28f5e89d6f9b27a45585465b4"
+  }
+}

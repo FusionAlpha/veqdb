@@ -155,8 +155,11 @@ python3 scripts/verify_field_order.py /path/to/VEQDB-equilibria-20260920
 
 ## 6. Scope of this document
 
-This document defines the format. It does not ship a reader: no implementation
-of the reconstruction step is distributed in this repository. The identities in
-§4 are a consistency check on the stored fields, not a reconstruction — they
-verify units, sign conventions and ordering, not the fitting that produced the
+This document defines the format. The standalone implementation in
+`src/veqdb/compact.py` provides `from_compact_json` for reconstruction roots
+and `to_compact_json` for diagnostic recomputation and encoding; see
+`README.md` §Reconstruction for installation and usage. It does not include
+the equilibrium solver or G-EQDSK fitting. The identities in §4 are a
+consistency check on the stored fields, not a reconstruction — they verify
+units, sign conventions and ordering, not the fitting that produced the
 coefficients.
