@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "veqdb"
-version = "0.1.0"
+version = "0.1.1"
 description = "Standalone codec for VEQDB compact equilibrium records"
 readme = "README.md"
 license-files = ["LICENSES/*.txt", "THIRD_PARTY_NOTICES.md"]

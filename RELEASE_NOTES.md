@@ -1,3 +1,28 @@
+# v0.1.1 — 5 November 2026
+
+Publish the Figure 3 pressure verification material accompanying the
+Scientific Data submission.
+
+- Archive the EAST seed derived from `g048059.03650` and 15 full-precision
+  compact states from the 5 November verification replay.
+- Provide the state table, solver and input provenance, source checksums and
+  an explicitly labelled excerpt of the historical scan summary.
+- Supply `scripts/verify_figure3_pressure.py` to check record diagnostics,
+  independently integrate the pressure gradient and compare magnetic-axis
+  coordinates with the historical scan.
+- Verify the manuscript range of 17.4–23.4 kPa. The replay range is
+  17.445862–23.398263 kPa with the archived seed edge-pressure input.
+
+The original summary's approximately doubled pressure diagnostic is retained
+as `historical_P_axis_Pa` with status `unreconciled_legacy_diagnostic`.
+Tracing its original writing step requires the summary-generation script.
+Re-running the fixed-boundary solves requires the historical solver environment
+identified in the provenance. The public verification command runs with the
+VEQDB package dependencies.
+
+The primary release comprises 13,291 sampled equilibria and three supplementary
+comparison records. The Figure 3 replay states are a separate validation bundle.
+
 # v0.1.0 — 4 November 2026
 
 First tagged GitHub release of the VEQDB standalone compact-record codec and
