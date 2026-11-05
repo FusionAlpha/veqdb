@@ -1,0 +1,139 @@
+{
+  "passed": true,
+  "replay_date": "2026-11-05",
+  "replay_states": 15,
+  "seed_checked": true,
+  "P_axis_range_Pa": [
+    17445.861659621092,
+    23398.26267477023
+  ],
+  "rounded_P_axis_range_kPa": [
+    17.4,
+    23.4
+  ],
+  "max_independent_pressure_difference_Pa": 1.1023803381249309e-07,
+  "max_historical_axis_difference_m": 6.341380198726654e-11,
+  "historical_pressure_status": "unreconciled_legacy_diagnostic",
+  "checks": [
+    {
+      "state_id": "k-0.15_R-0.040_s+0.00",
+      "P_axis_Pa": 22638.927785397565,
+      "independent_pressure_Pa": 22638.927785482312,
+      "independent_pressure_difference_Pa": 8.474671631120145e-08,
+      "R_axis_difference_m": 7.1243011490196295e-12,
+      "Z_axis_difference_m": 6.341380198726654e-11
+    },
+    {
+      "state_id": "k-0.15_R+0.000_s+0.00",
+      "P_axis_Pa": 23023.98980256443,
+      "independent_pressure_Pa": 23023.98980264925,
+      "independent_pressure_difference_Pa": 8.481947588734329e-08,
+      "R_axis_difference_m": 1.709743457922741e-14,
+      "Z_axis_difference_m": 7.15420778174547e-13
+    },
+    {
+      "state_id": "k-0.15_R+0.040_s+0.00",
+      "P_axis_Pa": 23398.26267477023,
+      "independent_pressure_Pa": 23398.2626748552,
+      "independent_pressure_difference_Pa": 8.496863301843405e-08,
+      "R_axis_difference_m": 5.240252676230739e-13,
+      "Z_axis_difference_m": 1.1166803592921326e-11
+    },
+    {
+      "state_id": "k-0.08_R-0.040_s+0.00",
+      "P_axis_Pa": 21103.84101145338,
+      "independent_pressure_Pa": 21103.841011498534,
+      "independent_pressure_difference_Pa": 4.515459295362234e-08,
+      "R_axis_difference_m": 1.8112178423734804e-12,
+      "Z_axis_difference_m": 4.590906821366758e-11
+    },
+    {
+      "state_id": "k-0.08_R+0.000_s+0.00",
+      "P_axis_Pa": 21454.811482397403,
+      "independent_pressure_Pa": 21454.811482441743,
+      "independent_pressure_difference_Pa": 4.43396857008338e-08,
+      "R_axis_difference_m": 1.7855272815836543e-11,
+      "Z_axis_difference_m": 4.5676379345493956e-12
+    },
+    {
+      "state_id": "k-0.08_R+0.040_s+0.00",
+      "P_axis_Pa": 21795.496375989325,
+      "independent_pressure_Pa": 21795.496376032945,
+      "independent_pressure_difference_Pa": 4.361936589702964e-08,
+      "R_axis_difference_m": 6.743494651573201e-13,
+      "Z_axis_difference_m": 3.622796507229964e-13
+    },
+    {
+      "state_id": "k+0.00_R-0.040_s+0.00",
+      "P_axis_Pa": 19626.516293576726,
+      "independent_pressure_Pa": 19626.516293558005,
+      "independent_pressure_difference_Pa": 1.8721038941293955e-08,
+      "R_axis_difference_m": 1.616484723854228e-13,
+      "Z_axis_difference_m": 6.121492202026957e-13
+    },
+    {
+      "state_id": "k+0.00_R+0.000_s+0.00",
+      "P_axis_Pa": 19942.742808304363,
+      "independent_pressure_Pa": 19942.742808283354,
+      "independent_pressure_difference_Pa": 2.1009327610954642e-08,
+      "R_axis_difference_m": 3.857358876757644e-12,
+      "Z_axis_difference_m": 6.7586214402837186e-12
+    },
+    {
+      "state_id": "k+0.00_R+0.040_s+0.00",
+      "P_axis_Pa": 20249.37122741913,
+      "independent_pressure_Pa": 20249.371227396026,
+      "independent_pressure_difference_Pa": 2.310480340383947e-08,
+      "R_axis_difference_m": 4.445332990599127e-13,
+      "Z_axis_difference_m": 8.75403916023032e-13
+    },
+    {
+      "state_id": "k+0.08_R-0.040_s+0.00",
+      "P_axis_Pa": 18381.698729845717,
+      "independent_pressure_Pa": 18381.69872977522,
+      "independent_pressure_difference_Pa": 7.049675332382321e-08,
+      "R_axis_difference_m": 7.256417688950023e-12,
+      "Z_axis_difference_m": 1.1266126920261854e-11
+    },
+    {
+      "state_id": "k+0.08_R+0.000_s+0.00",
+      "P_axis_Pa": 18667.366876468277,
+      "independent_pressure_Pa": 18667.36687639526,
+      "independent_pressure_difference_Pa": 7.301787263713777e-08,
+      "R_axis_difference_m": 3.410605131648481e-13,
+      "Z_axis_difference_m": 2.6407070974343583e-12
+    },
+    {
+      "state_id": "k+0.08_R+0.040_s+0.00",
+      "P_axis_Pa": 18944.013069229648,
+      "independent_pressure_Pa": 18944.013069154305,
+      "independent_pressure_difference_Pa": 7.534254109486938e-08,
+      "R_axis_difference_m": 2.369215934550084e-13,
+      "Z_axis_difference_m": 4.032461864422743e-12
+    },
+    {
+      "state_id": "k+0.15_R-0.040_s+0.00",
+      "P_axis_Pa": 17445.861659621092,
+      "independent_pressure_Pa": 17445.861659515733,
+      "independent_pressure_difference_Pa": 1.053595042321831e-07,
+      "R_axis_difference_m": 9.776623954849128e-13,
+      "Z_axis_difference_m": 5.1046236682061874e-11
+    },
+    {
+      "state_id": "k+0.15_R+0.000_s+0.00",
+      "P_axis_Pa": 17707.614894706392,
+      "independent_pressure_Pa": 17707.614894598497,
+      "independent_pressure_difference_Pa": 1.0789517546072602e-07,
+      "R_axis_difference_m": 1.3624212868990071e-11,
+      "Z_axis_difference_m": 1.694376583483148e-11
+    },
+    {
+      "state_id": "k+0.15_R+0.040_s+0.00",
+      "P_axis_Pa": 17960.780678494466,
+      "independent_pressure_Pa": 17960.780678384228,
+      "independent_pressure_difference_Pa": 1.1023803381249309e-07,
+      "R_axis_difference_m": 1.4837020501090592e-12,
+      "Z_axis_difference_m": 1.120703529977618e-11
+    }
+  ]
+}

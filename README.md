@@ -20,6 +20,10 @@ under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Cite this DOI
 when using the dataset. This repository provides the maintained data, standalone
 compact-record codec and verification scripts.
 
+A separate Figure 3 verification bundle provides the archived EAST seed and
+15 replay states generated on 5 November 2026, with provenance and a standalone
+pressure check in [`data/validation/figure3/`](data/validation/figure3/).
+
 ## Contents
 
 | Path | Contents |
@@ -27,6 +31,7 @@ compact-record codec and verification scripts.
 | `VEQDB-equilibria-20260920.tar.gz` | The release record set: 13,291 compact-JSON records, one file per accepted case, under 267 device directories. |
 | `VEQDB-png-partial-20260920.tar.gz` | 45 rendered equilibrium images covering 16 devices. Partial and illustrative; not a complete image set. |
 | `data/figure-data/` | Three supplementary reference records for the EAST, MAST-U and ITER `crossdev_*_p100` images. |
+| `data/validation/figure3/` | Archived EAST seed, 15 pressure-replay records, state table, historical-summary excerpt and provenance. |
 | `tokamak_data_2026-09-09.xlsx` | Device-survey workbook. |
 | `FORMAT.md` | The compact-JSON format specification: key table, units, encoding rules and the verification commands. |
 | `SHA256SUMS` | SHA-256 of each distributed download and supplementary reference record. |
@@ -60,7 +65,7 @@ with 100 active interior fitting parameters and 15th-order LCFS harmonics.
 The EAST source is the experimental lower-single-null EFIT equilibrium for
 discharge 48059 at 3.65 s. MAST-U and ITER are FreeGSNKE model references,
 not experimental reconstructions; the ITER conversion uses the closed inset
-contour at normalized flux 0.999, as described in manuscript section 4.2.
+contour at normalized flux 0.999, as described in the manuscript’s cross-device reconstruction section.
 
 The compact records describe the fitted LCFS and plasma interior. They do not
 supply the exterior field, divertor legs or strike points, and do not certify
@@ -78,8 +83,9 @@ distributed in this repository**:
 - the device-survey sweep configuration;
 - the retained G-EQDSK reference files; public source identifiers for EAST,
   CHEASE and EFIT are recorded in `SOURCE_DATA.md`;
-- the remaining frozen figure-data records and figure inputs used by
-  `scripts/build_figures.py`, apart from the three supplementary records above;
+- the full frozen figure-data collections and figure inputs used by
+  `scripts/build_figures.py`; the Figure 3 verification bundle is documented
+  separately above;
 - the solver.
 
 Consequently `scripts/build_figures.py` additionally requires the frozen inputs
@@ -88,6 +94,18 @@ The `settings` function is present in
 `scripts/gfile_projection/implementation/__init__.py`; that snapshot imports
 solver components outside the standalone VEQDB package. The record-verification
 scripts below and the compact-record codec have no such dependency.
+
+## Verify The Figure 3 Pressure Range
+
+After installing this repository, run
+
+```sh
+python scripts/verify_figure3_pressure.py
+```
+
+The command checks all 15 replay records through the public codec and
+independent pressure integration, then prints a JSON report. The bundle README
+explains the historical pressure diagnostic and the solver provenance.
 
 ## Reading A Record
 

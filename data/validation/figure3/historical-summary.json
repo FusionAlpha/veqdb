@@ -1,0 +1,163 @@
+{
+  "source_repository": "https://github.com/FusionAlpha/veqdb-dev",
+  "source_revision": "eba15100d5c1027cc7ee8f7a01c917d4bf9bd94c",
+  "source_path": "data/figure-data/east_same_topology_family.json",
+  "original_git_blob_sha": "5afb21acaa6fe102148a57a948ead9b62f27728b",
+  "original_sha256": "f240c5024b0eb0426c2a74825de6bf93fa1acc1a0eb07df325c0fbb88265ddc8",
+  "original_accepted_records": 45,
+  "selection": "One accepted row per geometry state, with dsource=0.0. Selected fields retain their recorded numerical values.",
+  "historical_pressure_status": "unreconciled_legacy_diagnostic",
+  "historical_pressure_note": "The original P_axis_Pa values are retained as historical_P_axis_Pa. The physical pressure verification uses the separately identified 2026-11-05 replay records.",
+  "states": [
+    {
+      "state_id": "k-0.15_R-0.040_s+0.00",
+      "dkappa": -0.15,
+      "dR0_m": -0.04,
+      "dsource": 0.0,
+      "R_axis_m": 1.831387026172923,
+      "Z_axis_m": -0.008016850122680254,
+      "Ip_A": 352209.30801227415,
+      "historical_P_axis_Pa": 45234.33218700752
+    },
+    {
+      "state_id": "k-0.15_R+0.000_s+0.00",
+      "dkappa": -0.15,
+      "dR0_m": 0.0,
+      "dsource": 0.0,
+      "R_axis_m": 1.8707667585285894,
+      "Z_axis_m": -0.00805088145561502,
+      "Ip_A": 352209.30801227235,
+      "historical_P_axis_Pa": 46003.882451108075
+    },
+    {
+      "state_id": "k-0.15_R+0.040_s+0.00",
+      "dkappa": -0.15,
+      "dR0_m": 0.04,
+      "dsource": 0.0,
+      "R_axis_m": 1.9101688852526588,
+      "Z_axis_m": -0.008083721041524494,
+      "Ip_A": 352209.3080122708,
+      "historical_P_axis_Pa": 46751.855379164626
+    },
+    {
+      "state_id": "k-0.08_R-0.040_s+0.00",
+      "dkappa": -0.08,
+      "dR0_m": -0.04,
+      "dsource": 0.0,
+      "R_axis_m": 1.8336136435764223,
+      "Z_axis_m": -0.0035729451067876214,
+      "Ip_A": 352209.30801228853,
+      "historical_P_axis_Pa": 42169.35042020319
+    },
+    {
+      "state_id": "k-0.08_R+0.000_s+0.00",
+      "dkappa": -0.08,
+      "dR0_m": 0.0,
+      "dsource": 0.0,
+      "R_axis_m": 1.872994252281346,
+      "Z_axis_m": -0.0036087354626101464,
+      "Ip_A": 352209.30801228475,
+      "historical_P_axis_Pa": 42870.688568610705
+    },
+    {
+      "state_id": "k-0.08_R+0.040_s+0.00",
+      "dkappa": -0.08,
+      "dR0_m": 0.04,
+      "dsource": 0.0,
+      "R_axis_m": 1.9123971661663746,
+      "Z_axis_m": -0.0036432893954433387,
+      "Ip_A": 352209.30801228114,
+      "historical_P_axis_Pa": 43551.45380762358
+    },
+    {
+      "state_id": "k+0.00_R-0.040_s+0.00",
+      "dkappa": 0.0,
+      "dR0_m": -0.04,
+      "dsource": 0.0,
+      "R_axis_m": 1.8355866296806882,
+      "Z_axis_m": 0.0015229651742609263,
+      "Ip_A": 352209.30801230203,
+      "historical_P_axis_Pa": 39224.44323704732
+    },
+    {
+      "state_id": "k+0.00_R+0.000_s+0.00",
+      "dkappa": 0.0,
+      "dR0_m": 0.0,
+      "dsource": 0.0,
+      "R_axis_m": 1.8749678105429992,
+      "Z_axis_m": 0.0014854860690012503,
+      "Ip_A": 352209.3080122929,
+      "historical_P_axis_Pa": 39856.449162740915
+    },
+    {
+      "state_id": "k+0.00_R+0.040_s+0.00",
+      "dkappa": 0.0,
+      "dR0_m": 0.04,
+      "dsource": 0.0,
+      "R_axis_m": 1.9143713854524287,
+      "Z_axis_m": 0.0014493074830282254,
+      "Ip_A": 352209.30801228475,
+      "historical_P_axis_Pa": 40469.24067370429
+    },
+    {
+      "state_id": "k+0.08_R-0.040_s+0.00",
+      "dkappa": 0.08,
+      "dR0_m": -0.04,
+      "dsource": 0.0,
+      "R_axis_m": 1.8371046333762011,
+      "Z_axis_m": 0.006619576792219077,
+      "Ip_A": 352209.30801231915,
+      "historical_P_axis_Pa": 36742.92675035118
+    },
+    {
+      "state_id": "k+0.08_R+0.000_s+0.00",
+      "dkappa": 0.08,
+      "dR0_m": 0.0,
+      "dsource": 0.0,
+      "R_axis_m": 1.876486520839213,
+      "Z_axis_m": 0.0065808786505809624,
+      "Ip_A": 352209.3080123008,
+      "historical_P_axis_Pa": 37313.88260299785
+    },
+    {
+      "state_id": "k+0.08_R+0.040_s+0.00",
+      "dkappa": 0.08,
+      "dR0_m": 0.04,
+      "dsource": 0.0,
+      "R_axis_m": 1.9158908674390567,
+      "Z_axis_m": 0.006543529654118564,
+      "Ip_A": 352209.30801228486,
+      "historical_P_axis_Pa": 37866.784457069676
+    },
+    {
+      "state_id": "k+0.15_R-0.040_s+0.00",
+      "dkappa": 0.15,
+      "dR0_m": -0.04,
+      "dsource": 0.0,
+      "R_axis_m": 1.8381535288245616,
+      "Z_axis_m": 0.011069898041663986,
+      "Ip_A": 352209.3080123446,
+      "historical_P_axis_Pa": 34874.42748627956
+    },
+    {
+      "state_id": "k+0.15_R+0.000_s+0.00",
+      "dkappa": 0.15,
+      "dR0_m": 0.0,
+      "dsource": 0.0,
+      "R_axis_m": 1.877536108501251,
+      "Z_axis_m": 0.011030517647696636,
+      "Ip_A": 352209.3080123127,
+      "historical_P_axis_Pa": 35397.58150902868
+    },
+    {
+      "state_id": "k+0.15_R+0.040_s+0.00",
+      "dkappa": 0.15,
+      "dR0_m": 0.04,
+      "dsource": 0.0,
+      "R_axis_m": 1.9169411913747134,
+      "Z_axis_m": 0.010992517184320358,
+      "Ip_A": 352209.3080122854,
+      "historical_P_axis_Pa": 35903.5593928569
+    }
+  ]
+}

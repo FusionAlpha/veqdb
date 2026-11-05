@@ -8,6 +8,8 @@ https://creativecommons.org/licenses/by/4.0/legalcode
 
 The standalone compact-record codec under src/veqdb/ retains the BSD 3-Clause
 licence and copyright notice in LICENSES/veqpy-BSD-3-Clause.txt.
+The Figure 3 verification script scripts/verify_figure3_pressure.py is also
+distributed under this BSD 3-Clause licence.
 
 Third-party material retains its applicable upstream terms. Source repositories
 and retained notices are identified in SOURCE_DATA.md and THIRD_PARTY_NOTICES.md.

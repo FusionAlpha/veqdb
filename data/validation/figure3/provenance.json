@@ -1,0 +1,94 @@
+{
+  "schema": "veqdb.figure3-verification.v1",
+  "replay_date": "2026-11-05",
+  "record_role": "Verification replay of the 15 Figure 3 geometry states",
+  "seed": {
+    "file": "seed.compact.json",
+    "repository": "https://github.com/FusionAlpha/veqdb-dev",
+    "revision": "eba15100d5c1027cc7ee8f7a01c917d4bf9bd94c",
+    "repository_path": "data/figure-data/east.compact.json",
+    "git_blob_sha": "1324f412d79fe96358a971221b84039492ca18c4",
+    "upstream_gfile": "https://github.com/Youjunhu/GTAW/blob/7ae4929f2b4e56637f0462a9a186d92edb17f316/gfile/g048059.03650"
+  },
+  "solver": {
+    "repository": "https://github.com/FusionAlpha/fusionprime-dev",
+    "revision": "88d0fa0bc77f023003a09b05343db26f77ffaf86",
+    "repository_access_at_verification": "archived private repository",
+    "entry_point": "fusionprime.VEQ.solve",
+    "backend": "numba",
+    "topology": {
+      "Nr": 32,
+      "Nt": 32,
+      "L_max": 5,
+      "M_max": 10,
+      "h_count": 6,
+      "v_count": 6,
+      "kappa_count": 6,
+      "c_counts": [
+        5,
+        4,
+        3,
+        2
+      ],
+      "s_counts": [
+        5,
+        4,
+        3,
+        2
+      ],
+      "quadrature": "legendre",
+      "calculus": "spectral"
+    },
+    "settings": {
+      "method": "powell",
+      "max_residual": 1e-10,
+      "max_evaluations": 1000,
+      "initial": "cold",
+      "continuation": "warm",
+      "norm": "fast"
+    },
+    "boundary": "Copy seed R0, Z0, a, B0, kappa_lcfs, c_lcfs and s_lcfs, then set R0=seed.R0+dR0_m and kappa_lcfs=seed.kappa_lcfs*(1+dkappa).",
+    "kinetic": "Use seed.psin and seed.P_psin with the seed P0. P_psin=P_psi*integral_0^1(psi_r dr).",
+    "current": "Use seed.psin and seed.FF_psin. FF_psin=FF_psi*integral_0^1(psi_r dr).",
+    "target": "Ip=seed.Ip recomputed by the archived seed decoder",
+    "input_Ip_A": 352209.30801224645
+  },
+  "input_P0_Pa": 29.6742825,
+  "environment": {
+    "python": "3.12.13",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "numba": "0.68.0",
+    "orjson": "3.13.0"
+  },
+  "pressure_definition": "P_axis=P0-integral_0^1(P_psi*psi_r dr)",
+  "pressure_unit": "Pa",
+  "publication_range_kPa": [
+    17.4,
+    23.4
+  ],
+  "historical_pressure_status": "unreconciled_legacy_diagnostic",
+  "remaining_provenance_question": "The original summary-generation script is needed to trace the approximately doubled historical pressure diagnostic.",
+  "public_verification_command": "python scripts/verify_figure3_pressure.py",
+  "file_sha256": {
+    "README.md": "ebf47254cc0f971ae02d1a88033a54080a3e9f985ae7024e1e94e2e5e0e47525",
+    "historical-summary.json": "105fe0bbd3b4aa6ef9dd93503a8fe0c3b20063c6463673862530bf2ad0eaedc9",
+    "records/k+0.00_R+0.000_s+0.00.compact.json": "0b5ebc98b053056e173182e89bdec32acdea1e266acea3d03022686c95e09830",
+    "records/k+0.00_R+0.040_s+0.00.compact.json": "7bb4fd9014ad7e46176689cd2decee0870081c972eec4cc74b7a177d2e37c959",
+    "records/k+0.00_R-0.040_s+0.00.compact.json": "fa56cd0f1eb4624441739cd073291581d15b343f3e07a9acb9713ab75e9d3bb7",
+    "records/k+0.08_R+0.000_s+0.00.compact.json": "dcd67397fd7a2dc0e7510874bc9dbabf4cd2fbf5eec232a6a3d9acec2c57b541",
+    "records/k+0.08_R+0.040_s+0.00.compact.json": "d457374b46e2e55d1a43ce3c6b8c25cafee98cf6dbaf8ecb397bfa33e9812194",
+    "records/k+0.08_R-0.040_s+0.00.compact.json": "628059c8955f4829d357467ea75d9355ea405a29ba727eac396a3268408e6c66",
+    "records/k+0.15_R+0.000_s+0.00.compact.json": "d3accbda5c5e9e576694473a186b09f09d05c0c9cd9ba94421752ea0be869629",
+    "records/k+0.15_R+0.040_s+0.00.compact.json": "bb388518c94ce7fc843a53892f68f1c7509f745d900ea0144b24ff93a8ade40c",
+    "records/k+0.15_R-0.040_s+0.00.compact.json": "44b206c461e3d43ae712a013d3b9ca61c0185aaef00aba71e871e3c726ee483b",
+    "records/k-0.08_R+0.000_s+0.00.compact.json": "6cf0991ab241aecd54ee31b337633d2ce42daeaae5001df3e7d9b09830ebc12f",
+    "records/k-0.08_R+0.040_s+0.00.compact.json": "64fc84cd0e545ce1ddb27659f555c4e168512e26090e5d316be0284a99dec73e",
+    "records/k-0.08_R-0.040_s+0.00.compact.json": "eebdf5ad48aed6699acaba22e53407042c8abd83af0395f96c9162ede44cc698",
+    "records/k-0.15_R+0.000_s+0.00.compact.json": "334582e40e93c5a2758e7c46c945e738699c9398c6d13b99a83e6756c87a2341",
+    "records/k-0.15_R+0.040_s+0.00.compact.json": "732fd67391c0250a6023076c2a393e1a076a1fac570f756ab306ea01a44a167f",
+    "records/k-0.15_R-0.040_s+0.00.compact.json": "c8e97c0b32e501b34a795aeac33e2059ebd5f9696582008cd1a69dfab3b20420",
+    "seed.compact.json": "15530de7521e2037b4c321bb6099f3a255b562dc7875d0d5eebd95b849c926f2",
+    "states.csv": "b2031341853ae595c8fba9a382f77d5ec612e12cffe7b877c940d682e17b4538"
+  }
+}
